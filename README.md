@@ -1,67 +1,45 @@
-# ***AWS AND DOCKER INSTALLATION***
-AWS Management Console:
+# ***OPENSTACK DEPLOYING***
 
-Web-based interface for managing AWS services
-AWS Global Infrastructure:
+How to Install OpenStack on Ubuntu with DevStack
 
-AWS global data center network
-Availability Zones:
+What is Openstack
+OpenStack is a free, open standard cloud computing platform. It is mostly deployed as infrastructure-as-a-service in public and private clouds where virtual servers and other resources are available to users.
 
-AWS data center clusters
-Amazon EC2 Instance Types:
+    sudo apt update
+    
+    sudo apt upgrade
+    
+    sudo reboot
 
-EC2 virtual machine configurations
-Storage and Database:
+    sudo useradd -s /bin/bash -d /opt/stack -m stack
+    sudo chmod +x /opt/stack
 
-Amazon S3: Object storage
-Amazon RDS: Managed databases
-Amazon DynamoDB: Managed NoSQL
-Docker Installation
-Quick Install
-curl -sL https://github.com/ShubhamTatvamasi/docker-install/raw/master/docker-install.sh | bash
-installing packages:
+    echo "stack ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/stack
 
-sudo apt update
-sudo apt install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release \
-    jq
-Add Docker’s official GPG key:
+    su - stack
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-setup repository:
+    sudo apt install git -y
+     
+     git clone https://git.openstack.org/openstack-dev/devstack
+    
+    cd devstack
+    
+    vim local.conf
 
-echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-Install Docker Engine:
+    [[local|localrc]]
 
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-Add your user to the docker group:
+# Password for KeyStone, Database, RabbitMQ and Service
 
-sudo usermod -aG docker $USER
-Docker Compose
-download the current stable release of Docker Compose:
+    ADMIN_PASSWORD=StrongAdminSecret
+    DATABASE_PASSWORD=$ADMIN_PASSWORD
+    RABBIT_PASSWORD=$ADMIN_PASSWORD
+    SERVICE_PASSWORD=$ADMIN_PASSWORD
 
-COMPOSE_VERSION=$(curl -s "https://api.github.com/repos/docker/compose/tags" | jq -r '.[0].name')
-sudo curl -L "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" \
-  -o /usr/local/bin/docker-compose
-Get executable permissions to the binary:
+# Host IP - get your Server/VM IP address from ip addr command
+    HOST_IP=10.208.0.10
 
-sudo chmod +x /usr/local/bin/docker-compose
-Pull Docker Images
-docker pull hello-world
-docker pull nginx
-docker pull ubuntu/apache2
-Listed Images
-docker images
-Port Forwarding nginx
-docker run --name mynginxl -p 80:80 -d nginx
-Killing nginx to run Apache2
-docker kill mynginxl
-Port Forwaring Apache2
-docker run --name myapache -p 80:80 -d ubuntu/apache2
+    ./stack.sh
+    
+    [./stack.sh](https://server-ip/dashboard)https://server-ip/dashboard
+
+    
