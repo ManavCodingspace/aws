@@ -1,14 +1,14 @@
-# AWS-experiments
-## What is cloud computing
+# **AWS-experiments**
+## **What is cloud computing**
 - cloud computing is the delivery of computing services including servers,storage,databases,networking,software etc.
-## benfits 
+## **benfits** 
 - faster time to market
 - scalability and flexibility
 - cost savings
 - better collaboration
 - advanced security
 - data loss prevention
-## disadvantage 
+## **disadvantage** 
 - risk of vendor lock-in
 - less control over underlying cloud insfra
 - concerns about security risks like data privacy and online threats
@@ -20,25 +20,25 @@
 - example of private implementation softwares : openstack , opennebula 
 
 
-## Hyperscalars : A hyperscaler is a type of large-scale data center that offers massive computing resources, typically in the form of an elastic cloud platform. Organizations use them to deploy and manage large-scale applications and services.
+## **Hyperscalars** : A hyperscaler is a type of large-scale data center that offers massive computing resources, typically in the form of an elastic cloud platform. Organizations use them to deploy and manage large-scale applications and services.
 
 ![Screenshot from 2023-11-26 11-17-36](https://github.com/maanv gaur/AWS/assets/86760658/a37cc108-bf86-481f-80cd-ea7ec4b1e5a1)
 ![Screenshot from 2023-11-26 11-19-52](https://github.com/manavgaur/AWS/assets/86760658/7f6c1e83-29b4-43dc-9cf5-2e20cdc321fa)
 
-## Compute services 
+## **Compute services** 
 - EC2  
 - ECS/EKS : containerized services `
   - Fargate
 - lambda : serverless 
 
-## Storage Services
+## **Storage Services**
 - S3
 - EBS : Amazon Elastic Block Storage is a storage service wherein each block of storage acts like a separate hard drive (volume) . 
 - EFS : dont need to assign any volume , can do on its own , seamless storage , database on EC2 instances 
 - Archival service - Glacier : Amazon Glacier is extremely low cost, secure, and durable storage service for data archiving and
 backup. That data stored which are not needed instantly , eg old data . Takes time min 4 hours or 1 day to retrieve request ( S3 instantly returns request)
 
-## Network Services
+## **Network Services**
 - VPC : own insolated environment in a public cloud
 - Domain Name Service - Route 53
 
@@ -59,6 +59,6 @@ backup. That data stored which are not needed instantly , eg old data . Takes ti
 
 - **Apache web server works on layer 7 , using single apache server one can deploy multiple applications on different ports based on paths (URLbased) (virtual hosts) . virtual hosting can only work on layer 7**
 
-## Application based LB 
+## **Application based LB** 
 - key pair : kind of like a password (public key is username; private key is password)
   - PPK (PuTTY Private Key) and PEM (Privacy Enhanced Mail) are two file formats that are commonly used for SSH and SSL/TLS connections. While PPK files are primarily used with PuTTY on Windows, PEM files are more widely supported and can be used with various tools and platforms
