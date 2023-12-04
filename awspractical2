@@ -1,3 +1,4 @@
+
 # AWS-experiments
 ## What is cloud computing
 - cloud computing is the delivery of computing services including servers,storage,databases,networking,software etc.
@@ -12,8 +13,13 @@
 - risk of vendor lock-in
 - less control over underlying cloud insfra
 - concerns about security risks like data privacy and online threats
-- integration complexity with exisiting systemsvZrI
+- integration complexity with exisiting systems
+- unforseen costs and unexpected expenses
+
+![pic1](https://github.com/KshitizSadh/AWS-experiments/assets/142923024/fc5557a2-57f2-48b6-b393-bc3358c22b1e)
+
 - example of private implementation softwares : openstack , opennebula 
+
 
 ## Hyperscalars : A hyperscaler is a type of large-scale data center that offers massive computing resources, typically in the form of an elastic cloud platform. Organizations use them to deploy and manage large-scale applications and services.
 
@@ -313,3 +319,19 @@ nano hpa.yaml
 ![Screenshot from 2023-12-02 16-04-58](https://github.com/KRIISHSHARMA/AWS/assets/86760658/86c01036-bc68-4035-a38f-21a253b80f20)
 ![Screenshot from 2023-12-02 16-08-06](https://github.com/KRIISHSHARMA/AWS/assets/86760658/694af61d-a154-461c-a15c-33cf94787fe4)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
